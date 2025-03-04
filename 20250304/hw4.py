@@ -35,7 +35,11 @@ In tenement halls"
 And whispered in the sound of silence'''
 
 def count_silence(lyrics, word='silence'):
-...
+    count = 0
+    words = lyrics.lower().split()
+    for word in words:
+        if word == 'silence':
+            count += 1
     return count
 
 print(count_silence(lyrics))
