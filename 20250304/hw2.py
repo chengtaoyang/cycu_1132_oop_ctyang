@@ -5,8 +5,6 @@ def gcd(a: int, b: int) -> int:
     return gcd(b, a % b)
 
 # 測試範例
-x, y = 11, 121
+x, y = 55, 21
 print(f"GCD of {x} and {y} is {gcd(x, y)}")
 
-x, y = 7, 49
-print(f"GCD of {x} and {y} is {gcd(x, y)}")
