@@ -20,6 +20,10 @@ arg = ''.join(reversed('parrot'))
 def reverse_word(word):
     return ''.join(reversed(word))
 
+
+def is_palindrome(word):
+    return word == reverse_word(word)
+
 #A palindrome is a word that is spelled the same backward and forward, like “noon” and “rotator”. Write a function called is_palindrome that takes a string argument and returns True if it is a palindrome and False otherwise.
 #You can use the following loop to find all of the palindromes in the word list with at least 7 letters.
 word_list = ['noon', 'redivider', 'deified', 'civic', 'radar', 'level', 'rotor', 'kayak', 'reviver', 'racecar', 'madam', 'refer']   

@@ -29,4 +29,4 @@ lunar_date = convert_to_lunar(year, month, day)
 print(f'The lunar date is {lunar_date}')
 
 # print the zodiac sign for the given year
-print(f'The year {lunar_date.year} is the year of the {get_zodiac(year)}.')
+print(f'The year {lunar_date.year} is the year of the {get_zodiac(lunar_date.year)}.')
