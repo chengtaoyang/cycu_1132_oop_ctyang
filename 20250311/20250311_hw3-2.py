@@ -30,3 +30,11 @@ print(f'The lunar date is {lunar_date}')
 
 # print the zodiac sign for the given year
 print(f'The year {lunar_date.year} is the year of the {get_zodiac(lunar_date.year)}.')
+
+# print the day of the week for the given date\
+import datetime
+weekday = datetime.date(year, month, day).weekday()
+print(f'The day of the week is {weekdays[weekday]}.')
+
+# print the month and day of the lunar date
+print(f'The lunar date is {months[lunar_date.month - 1]} {lunar_date.day}.')
