@@ -11,4 +11,6 @@ https://allendowney.github.io/ThinkPython/
 C:\Users\User\Desktop\cycu_1132_oop_ctyang>python --version
 
 C:\Users\User\Desktop\cycu_1132_oop_ctyang>python -m venv .venv 
+
+
 C:\Users\User\Desktop\cycu_1132_oop_ctyang\.venv\Scripts\python.exe -m pip
