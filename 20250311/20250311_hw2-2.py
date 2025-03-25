@@ -1,6 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# pip pandas
+# pip install matplotlib
+# pip install openpyxl
+
 # 讀取 Excel 檔案
 df = pd.read_excel('311.xlsx')
 
