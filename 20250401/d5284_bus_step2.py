@@ -1,26 +1,25 @@
+from requests_html import HTMLSession
 import requests
 import html
 import pandas as pd
 from bs4 import BeautifulSoup
 
-def get_stop_info(stop_link:str) -> dict:
+from playwright.sync_api import sync_playwright
 
-    url = f'https://pda5284.gov.taipei/MQS/{stop_link}'
-    # get url and save to html file 
-    # the html file is saved files as bus_{stop_link}.html
-    response = requests.get(url)
-    if response.status_code == 200:
+def get_stop_info(stop_link: str) -> dict:
+    stop_id = stop_link.split("=")[1]
+    url = f'https://pda5284.gov.taipei/MQS/stoplocation.jsp?slid={stop_id}'
 
-        # read id from url
-        stop_id = stop_link.split("=")[1]
-
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+        page.goto(url)
+        content = page.content()
         with open(f"bus_stop_{stop_id}.html", "w", encoding="utf-8") as file:
-            file.write(response.text)
+            file.write(content)
+        browser.close()
 
-        #print(f"網頁已成功下載並儲存為 bus_{stop_link}.html")
-    else:
-        #print(f"無法下載網頁，HTTP 狀態碼: {response.status_code}") 
-        pass
+    return {"stop_id": stop_id, "html_file": f"bus_stop_{stop_id}.html"}
 
 
 def get_bus_route(rid):

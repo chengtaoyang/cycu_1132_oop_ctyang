@@ -7,7 +7,7 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
         <script src="ajax2.js"></script>
-		<title>[&#x9f8d;&#x9580;&#x8def;&#x53e3;]公車動態資訊</title>
+		<title>[&#x793e;&#x6b63;&#x8def;]公車動態資訊</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
 		<link rel="shortcut icon" href="#"/>
 		<script language="JavaScript">
@@ -34,7 +34,7 @@
 			
 	        function queryDyna() {
 	        	if (Timer!=null) clearTimeout(Timer);
-	        	http('GET', 'StopLocationDyna?stoplocationid=10626', processDyna);
+	        	http('GET', 'StopLocationDyna?stoplocationid=36105', processDyna);
 	        }
 	        
 	    	function processDyna(data) {
@@ -91,7 +91,7 @@
 				<th class="title2"><a href="routelist.jsp" class="title2">查詢公車動態資訊</a></th>
 			</tr>
 			<tr>
-				<th class="title4">&#x9f8d;&#x9580;&#x8def;&#x53e3;<br><span class="updatetime">(更新時間：<span id="spnUpdateTime"></span>&nbsp;<input type="button" value="立刻更新" onclick="queryDyna();">)</span></th>
+				<th class="title4">&#x793e;&#x6b63;&#x8def;<br><span class="updatetime">(更新時間：<span id="spnUpdateTime"></span>&nbsp;<input type="button" value="立刻更新" onclick="queryDyna();">)</span></th>
 			</tr>
 		</table>
     	
@@ -107,23 +107,8 @@
                         <th class="ttegotitle">去返程</th>
                         <th class="ttegotitle">預估到站</th>
                       </tr>
-                      <tr class="ttego1"><td><a href="route.jsp?rid=17849">1212 &#x4e09;&#x91cd;&#x5340;&rarr;&#x570b;&#x9053;1&#x865f;&rarr;&#x6843;&#x5712;&#x5e02;&#x9f9c;&#x5c71;&#x5340;</a></td><td><a href="stop.jsp?from=sl&sid=193492">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>去程</td><td align=center id="tte193492" data-deptimen1="Y"></td></tr>
-<tr class="ttego2"><td><a href="route.jsp?rid=17848">1212 &#x6843;&#x5712;&#x5e02;&#x9f9c;&#x5c71;&#x5340;&rarr;&#x570b;&#x9053;1&#x865f;&rarr;&#x4e09;&#x91cd;&#x5340;</a></td><td><a href="stop.jsp?from=sl&sid=193490">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>去程</td><td align=center id="tte193490" data-deptimen1="Y"></td></tr>
-<tr class="ttego1"><td><a href="route.jsp?rid=11232">211</a></td><td><a href="stop.jsp?from=sl&sid=42712">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte42712" data-deptimen1="Y"></td></tr>
-<tr class="ttego2"><td><a href="route.jsp?rid=10415">221</a></td><td><a href="stop.jsp?from=sl&sid=35869">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte35869" data-deptimen1="Y"></td></tr>
-<tr class="ttego1"><td><a href="route.jsp?rid=10414">261</a></td><td><a href="stop.jsp?from=sl&sid=21297">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte21297" data-deptimen1="Y"></td></tr>
-<tr class="ttego2"><td><a href="route.jsp?rid=19678">261&#x9810;</a></td><td><a href="stop.jsp?from=sl&sid=219795">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte219795" data-deptimen1="Y"></td></tr>
-<tr class="ttego1"><td><a href="route.jsp?rid=16588">264</a></td><td><a href="stop.jsp?from=sl&sid=138818">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>去程</td><td align=center id="tte138818" data-deptimen1="Y"></td></tr>
-<tr class="ttego2"><td><a href="route.jsp?rid=10473">306</a></td><td><a href="stop.jsp?from=sl&sid=36959">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte36959" data-deptimen1="Y"></td></tr>
-<tr class="ttego1"><td><a href="route.jsp?rid=11243">39</a></td><td><a href="stop.jsp?from=sl&sid=42812">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte42812" data-deptimen1="Y"></td></tr>
-<tr class="ttego2"><td><a href="route.jsp?rid=15664">39&#x591c;</a></td><td><a href="stop.jsp?from=sl&sid=50724">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte50724" data-deptimen1="Y"></td></tr>
-<tr class="ttego1"><td><a href="route.jsp?rid=11244">62</a></td><td><a href="stop.jsp?from=sl&sid=18140">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte18140" data-deptimen1="Y"></td></tr>
-<tr class="ttego2"><td><a href="route.jsp?rid=16517">704</a></td><td><a href="stop.jsp?from=sl&sid=131561">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte131561" data-deptimen1="Y"></td></tr>
-<tr class="ttego1"><td><a href="route.jsp?rid=16693">785</a></td><td><a href="stop.jsp?from=sl&sid=150184">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte150184" data-deptimen1="Y"></td></tr>
-<tr class="ttego2"><td><a href="route.jsp?rid=16591">857</a></td><td><a href="stop.jsp?from=sl&sid=139118">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte139118" data-deptimen1="Y"></td></tr>
-<tr class="ttego1"><td><a href="route.jsp?rid=16876">F302</a></td><td><a href="stop.jsp?from=sl&sid=159336">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>去程</td><td align=center id="tte159336" data-deptimen1="Y"></td></tr>
-<tr class="ttego2"><td><a href="route.jsp?rid=10417">&#x5fe0;&#x5b5d;&#x5e79;&#x7dda;</a></td><td><a href="stop.jsp?from=sl&sid=36105">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte36105" data-deptimen1="Y"></td></tr>
-<tr class="ttego1"><td><a href="route.jsp?rid=17360">&#x85cd;1</a></td><td><a href="stop.jsp?from=sl&sid=171634">&#x9f8d;&#x9580;&#x8def;&#x53e3;</a></td><td align=center>返程</td><td align=center id="tte171634" data-deptimen1="Y"></td></tr>
+                      <tr class="ttego1"><td><a href="route.jsp?rid=11201">&#x7d05;7</a></td><td><a href="stop.jsp?from=sl&sid=17099">&#x793e;&#x6b63;&#x8def;</a></td><td align=center>返程</td><td align=center id="tte17099" data-deptimen1="Y"></td></tr>
+<tr class="ttego2"><td><a href="route.jsp?rid=11202">&#x7d05;7&#x5340;</a></td><td><a href="stop.jsp?from=sl&sid=17159">&#x793e;&#x6b63;&#x8def;</a></td><td align=center>去程</td><td align=center id="tte17159" data-deptimen1="Y"></td></tr>
 
                     </table>
 				</td>
