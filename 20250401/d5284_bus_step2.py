@@ -90,7 +90,24 @@ def get_bus_route(rid):
 
         # Return two DataFrames
         if len(dataframes) >= 6:
-            return dataframes[0], dataframes[3]
+
+            go_dataframe = dataframes[0]
+            back_dataframe = dataframes[3]
+
+            for index, row in go_dataframe.iterrows():
+                stop_link = row['stop_link']
+                if stop_link:
+                    get_stop_info(stop_link)
+                    #print(f"get stop info from {stop_link}")
+
+            for index, row in back_dataframe.iterrows():
+                stop_link = row['stop_link']
+                if stop_link:
+                    get_stop_info(stop_link)
+                    #print(f"get stop info from {stop_link}")
+
+
+            return go_dataframe, back_dataframe
         else:
             print('length of dataframes:', len(dataframes))
             raise ValueError("Insufficient table data found.")
