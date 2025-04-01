@@ -10,13 +10,13 @@ response = requests.get(url)
 
 # 確保請求成功
 if response.status_code == 200:
-    # 將內容寫入 bus1.html
-    with open("bus1.html", "w", encoding="utf-8") as file:
+    # 將內容寫入 bus_route.html
+    with open("bus_route.html", "w", encoding="utf-8") as file:
         file.write(response.text)
     print("網頁已成功下載並儲存為 bus1.html")
 
     # 重新讀取並解碼 HTML
-    with open("bus1.html", "r", encoding="utf-8") as file:
+    with open("bus_route.html", "r", encoding="utf-8") as file:
         content = file.read()
         decoded_content = html.unescape(content)  # 解碼 HTML 實體
         print(decoded_content)  # 顯示解碼後的內容
