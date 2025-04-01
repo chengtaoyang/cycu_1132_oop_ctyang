@@ -20,7 +20,43 @@ def get_stop_info(stop_link: str) -> dict:
             print(f"網頁已成功下載並儲存為 bus_stop_{stop_id}.html")
         browser.close()
 
-    
+    soup = BeautifulSoup(content, "html.parser")
+    # Find all tables
+    tables = soup.find_all("table")
+    # Initialize DataFrame list
+    dataframes = []
+    for table in tables:
+        # Find all tr tags with the specified classes
+        trs = table.find_all("tr", class_=["ttego1", "ttego2"])
+        if trs:
+            rows = []               
+            for tr in trs:
+                # Extract stop name and link
+
+                tds = tr.find_all("td")
+                
+                if len(tds) >= 4:  # 確保有足夠的欄位
+                    route = tds[0].text.strip()  # 路線名稱
+                    stop_name = tds[1].text.strip()  # 站牌名稱
+                    direction = tds[2].text.strip()  # 去返程
+                    estimated_time = tds[3].text.strip()  # 預估到站時間
+
+                    # 提取 `data-deptimen1` 屬性
+                    data_deptimen1 = tds[3].get("data-deptimen1", None)
+
+                    # 將資料加入列表
+                    rows.append({
+                        "route": route,
+                        "stop_name": stop_name,
+                        "direction": direction,
+                        "estimated_time": estimated_time,
+                        "data_deptimen1": data_deptimen1
+                    })
+
+    if len(dataframes) >= 1:
+        print("第一個 DataFrame:")
+        print(dataframes[0])
+       
     return {"stop_id": stop_id, "html_file": f"bus_stop_{stop_id}.html"}
 
 
