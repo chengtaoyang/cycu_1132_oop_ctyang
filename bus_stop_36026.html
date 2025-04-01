@@ -2,7 +2,7 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
         <script src="ajax2.js"></script>
-		<title>[坑口]公車動態資訊</title>
+		<title>[蘆洲監理站]公車動態資訊</title>
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 		<link rel="shortcut icon" href="#">
 		<script language="JavaScript">
@@ -29,7 +29,7 @@
 			
 	        function queryDyna() {
 	        	if (Timer!=null) clearTimeout(Timer);
-	        	http('GET', 'StopLocationDyna?stoplocationid=36026', processDyna);
+	        	http('GET', 'StopLocationDyna?stoplocationid=3696', processDyna);
 	        }
 	        
 	    	function processDyna(data) {
@@ -86,7 +86,7 @@
 				<th class="title2"><a href="routelist.jsp" class="title2">查詢公車動態資訊</a></th>
 			</tr>
 			<tr>
-				<th class="title4">坑口<br><span class="updatetime">(更新時間：<span id="spnUpdateTime"></span>&nbsp;<input type="button" value="立刻更新" onclick="queryDyna();">)</span></th>
+				<th class="title4">蘆洲監理站<br><span class="updatetime">(更新時間：<span id="spnUpdateTime"></span>&nbsp;<input type="button" value="立刻更新" onclick="queryDyna();">)</span></th>
 			</tr>
 		</tbody></table>
     	
@@ -102,14 +102,23 @@
                         <th class="ttegotitle">去返程</th>
                         <th class="ttegotitle">預估到站</th>
                       </tr>
-                      <tr class="ttego1"><td><a href="route.jsp?rid=10441">508</a></td><td><a href="stop.jsp?from=sl&amp;sid=36218">坑口</a></td><td align="center">去程</td><td align="center" id="tte36218" data-deptimen1="Y"></td></tr>
-<tr class="ttego2"><td><a href="route.jsp?rid=16849">580</a></td><td><a href="stop.jsp?from=sl&amp;sid=203559">坑口</a></td><td align="center">去程</td><td align="center" id="tte203559" data-deptimen1="Y"></td></tr>
-<tr class="ttego1"><td><a href="route.jsp?rid=16270">838</a></td><td><a href="stop.jsp?from=sl&amp;sid=113742">坑口</a></td><td align="center">去程</td><td align="center" id="tte113742" data-deptimen1="Y"></td></tr>
-<tr class="ttego2"><td><a href="route.jsp?rid=16659">880</a></td><td><a href="stop.jsp?from=sl&amp;sid=147183">坑口</a></td><td align="center">去程</td><td align="center" id="tte147183" data-deptimen1="Y"></td></tr>
-<tr class="ttego1"><td><a href="route.jsp?rid=16660">883</a></td><td><a href="stop.jsp?from=sl&amp;sid=147286">坑口</a></td><td align="center">返程</td><td align="center" id="tte147286" data-deptimen1="Y"></td></tr>
-<tr class="ttego2"><td><a href="route.jsp?rid=17570">947</a></td><td><a href="stop.jsp?from=sl&amp;sid=181539">坑口</a></td><td align="center">返程</td><td align="center" id="tte181539" data-deptimen1="Y"></td></tr>
-<tr class="ttego1"><td><a href="route.jsp?rid=17916">963</a></td><td><a href="stop.jsp?from=sl&amp;sid=196318">坑口</a></td><td align="center">返程</td><td align="center" id="tte196318" data-deptimen1="Y"></td></tr>
-<tr class="ttego2"><td><a href="route.jsp?rid=16489">橘19</a></td><td><a href="stop.jsp?from=sl&amp;sid=128994">坑口</a></td><td align="center">去程</td><td align="center" id="tte128994" data-deptimen1="Y"></td></tr>
+                      <tr class="ttego1"><td><a href="route.jsp?rid=10443">225</a></td><td><a href="stop.jsp?from=sl&amp;sid=10010">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte10010" data-deptimen1="Y"></td></tr>
+<tr class="ttego2"><td><a href="route.jsp?rid=16128">225區</a></td><td><a href="stop.jsp?from=sl&amp;sid=58243">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte58243" data-deptimen1="Y"></td></tr>
+<tr class="ttego1"><td><a href="route.jsp?rid=10416">232</a></td><td><a href="stop.jsp?from=sl&amp;sid=35919">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte35919" data-deptimen1="Y"></td></tr>
+<tr class="ttego2"><td><a href="route.jsp?rid=10419">232快</a></td><td><a href="stop.jsp?from=sl&amp;sid=36138">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte36138" data-deptimen1="Y"></td></tr>
+<tr class="ttego1"><td><a href="route.jsp?rid=10473">306</a></td><td><a href="stop.jsp?from=sl&amp;sid=36843">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte36843" data-deptimen1="Y"></td></tr>
+<tr class="ttego2"><td><a href="route.jsp?rid=10441">508</a></td><td><a href="stop.jsp?from=sl&amp;sid=36232">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte36232" data-deptimen1="Y"></td></tr>
+<tr class="ttego1"><td><a href="route.jsp?rid=10442">508區</a></td><td><a href="stop.jsp?from=sl&amp;sid=36358">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte36358" data-deptimen1="Y"></td></tr>
+<tr class="ttego2"><td><a href="route.jsp?rid=16517">704</a></td><td><a href="stop.jsp?from=sl&amp;sid=131515">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte131515" data-deptimen1="Y"></td></tr>
+<tr class="ttego1"><td><a href="route.jsp?rid=16693">785</a></td><td><a href="stop.jsp?from=sl&amp;sid=150143">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte150143" data-deptimen1="Y"></td></tr>
+<tr class="ttego2"><td><a href="route.jsp?rid=16499">816</a></td><td><a href="stop.jsp?from=sl&amp;sid=129560">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte129560" data-deptimen1="Y"></td></tr>
+<tr class="ttego1"><td><a href="route.jsp?rid=17536">927</a></td><td><a href="stop.jsp?from=sl&amp;sid=179923">蘆洲監理站</a></td><td align="center">返程</td><td align="center" id="tte179923" data-deptimen1="Y"></td></tr>
+<tr class="ttego2"><td><a href="route.jsp?rid=17545">927經台北港</a></td><td><a href="stop.jsp?from=sl&amp;sid=180573">蘆洲監理站</a></td><td align="center">返程</td><td align="center" id="tte180573" data-deptimen1="Y"></td></tr>
+<tr class="ttego1"><td><a href="route.jsp?rid=17537">928</a></td><td><a href="stop.jsp?from=sl&amp;sid=180011">蘆洲監理站</a></td><td align="center">返程</td><td align="center" id="tte180011" data-deptimen1="Y"></td></tr>
+<tr class="ttego2"><td><a href="route.jsp?rid=10417">忠孝幹線</a></td><td><a href="stop.jsp?from=sl&amp;sid=36026">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte36026" data-deptimen1="Y"></td></tr>
+<tr class="ttego1"><td><a href="route.jsp?rid=16668">橘13</a></td><td><a href="stop.jsp?from=sl&amp;sid=151137">蘆洲監理站</a></td><td align="center">返程</td><td align="center" id="tte151137" data-deptimen1="Y"></td></tr>
+<tr class="ttego2"><td><a href="route.jsp?rid=18028">蘆洲-內湖</a></td><td><a href="stop.jsp?from=sl&amp;sid=200699">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte200699" data-deptimen1="Y"></td></tr>
+<tr class="ttego1"><td><a href="route.jsp?rid=17968">蘆洲中正路-士林中正路</a></td><td><a href="stop.jsp?from=sl&amp;sid=198825">蘆洲監理站</a></td><td align="center">去程</td><td align="center" id="tte198825" data-deptimen1="Y"></td></tr>
 
                     </tbody></table>
 				</td>

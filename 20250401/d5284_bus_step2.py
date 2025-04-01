@@ -8,7 +8,7 @@ from playwright.sync_api import sync_playwright
 
 def get_stop_info(stop_link: str) -> dict:
     stop_id = stop_link.split("=")[1]
-    url = f'https://pda5284.gov.taipei/MQS/stoplocation.jsp?slid={stop_id}'
+    url = f'https://pda5284.gov.taipei/MQS/{stop_link}'
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -17,8 +17,10 @@ def get_stop_info(stop_link: str) -> dict:
         content = page.content()
         with open(f"bus_stop_{stop_id}.html", "w", encoding="utf-8") as file:
             file.write(content)
+            print(f"網頁已成功下載並儲存為 bus_stop_{stop_id}.html")
         browser.close()
 
+    
     return {"stop_id": stop_id, "html_file": f"bus_stop_{stop_id}.html"}
 
 
