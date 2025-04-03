@@ -171,3 +171,5 @@ cython_debug/
 .pypirc
 .venv/
 *.html
+*.gpkg-shm 
+*.gpkg-wal
