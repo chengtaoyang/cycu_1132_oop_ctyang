@@ -26,5 +26,23 @@ try:
 
     # 儲存為 gpkg 檔案
     gdf.to_file("taipei_city_bus_route.gpkg", driver="GPKG")
+
+    import folium
+
+    # Create a Folium map centered on the data
+    center = gdf.geometry.iloc[0].centroid.coords[0][::-1]  # (lat, lon)
+    m = folium.Map(location=center, zoom_start=13)
+
+    # Add LineString routes to the map
+    for _, row in gdf.iterrows():
+        x_array = row.geometry.xy[0]
+        y_array = row.geometry.xy[1]
+        points = list(zip(y_array, x_array))
+        folium.PolyLine(locations=points, tooltip=row['UniRouteId']).add_to(m)
+
+    # Save to HTML
+    m.save("bus_routes_map.html")
+
 except Exception as e:
-    str(e)
+
+    print("Error processing the file:", e)
