@@ -54,7 +54,8 @@ class BusRoute:
         for _, row in dataframe.iterrows():
             arrival_info = row['arrival_info']
             # Check for valid arrival info format
-            self.check_arrival_info(arrival_info)
+            info_list = str(self.check_arrival_info(arrival_info))
+            dataframe.at[_, 'arrival_info'] = info_list
 
         return dataframe        
 
@@ -63,36 +64,31 @@ class BusRoute:
             # 未發車<br><img border="0" src="bus1.gif"><font style="color:darkblue;">679-U5</font>
             # 6分<br><img border="0" src="bus1.gif"><font style="color:darkblue;">648-U5</font>
             # bus_stop_status = ['進站中','未發車','交管不停','末班已過','今日未營運']
-
-        status_map = {'進站中': int(0), '未發車': int(-1), '交管不停': int(-2), '末班已過': int(-3), '今日未營運': int(-4)}
+        #status_map = {'進站中': int(0), '未發車': int(-1), '交管不停': int(-2), '末班已過': int(-3), '今日未營運': int(-4)}
  
-        print ('-------------------------------------------')
         #split the arrival_info string into parts by '<br>'
         arrival_info_parts = arrival_info.split('<br>')
 
         # Updated regex pattern to match all specified arrival_info types
-        pattern_elem1 = r'[(?:未發車)|(?:進站中)|(?:交管不停)|(?:末班已過)|(?:今日未營運)|(?:\d+分)]'
-        pattern_elem2 = r'<img border="0" src="bus1\.gif"><font style="color:darkblue;">(.*?)</font>'
+        pattern_elem1 = r'^[(?:將到站)|(?:未發車)|(?:進站中)|(?:交管不停)|(?:末班已過)|(?:今日未營運)|(?:\d+分)]'
+        pattern_elem2 = r'^<img border="0" src="bus1\.gif"><font style="color:darkblue;">(.*?)</font>$'
 
+        info_list = []
         for info in arrival_info_parts:
             # Check if the info matches one of the specified arrival_info types
             match1 = re.search(pattern_elem1, info)
             match2 = re.search(pattern_elem2, info)
-            if not match1 and not match2:
-                # If neither pattern matches, return False
-                print(f"Invalid arrival info format: {arrival_info} : {info}")
             if match1 and not match2:
-                # If the first pattern matches, print the matched text
-                # if fit \d+分, convert to int , else use status_map 
-                if match1.group(0) in status_map:
-                    print(f"Matched bus stop status: {match1.group(0)} and value= {status_map[match1.group(0)]}")
-                elif re.match(r'\d+分', match1.group(0)):
-                    print(f"Matched bus stop status: {int(match1.group(0).replace('分',''))}")
-                else:
-                    print(f"Invalid arrival info format: {arrival_info} : {info}")
-            if match2 and not match1:
-                # If the second pattern matches, print the matched text
-                print(f"Matched bus stop status: {match2.group(1)}")
+                info_p = info
+            elif not match1 and match2:
+                info_p = match2.group(1)
+            else:
+                info_p = None
+            info_list.append(info_p)
+        
+        return info_list
+    
+
 # Test class
 if __name__ == "__main__":
     rid = "10417"  # Test route ID
@@ -101,11 +97,11 @@ if __name__ == "__main__":
         go_df = bus_route.timetable("ttego")
         back_df = bus_route.timetable("tteback")
 
-        # print("Go DataFrame:")
-        # print(go_df)
+        print("Go DataFrame:")
+        print(go_df)
         
-        # print("\nBack DataFrame:")
-        # print(back_df)
+        print("\nBack DataFrame:")
+        print(back_df)
     except requests.RequestException as e:
         print(f"Request failed: {e}")
     except IOError as e:
