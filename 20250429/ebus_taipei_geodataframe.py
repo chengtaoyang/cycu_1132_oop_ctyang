@@ -286,7 +286,7 @@ if __name__ == "__main__":
 
     for route_id in bus_list:
         try:
-            route_info = taipei_route_info(route_id, direction="go")
+            route_info = taipei_route_info(route_id, direction="come")
             route_info.parse_route_info()
             route_info.save_to_database()
 
@@ -298,11 +298,20 @@ if __name__ == "__main__":
             gpdf = convert_to_geodataframe(route_info.dataframe)
 
 
-            #draw gpdf to png using matplotlib
+            #draw gpdf to data/ebus.png using matplotlib
             import matplotlib.pyplot as plt
             import geopandas as gpd
-            import contextily as ctx
-            
+      
+            plt.figure(figsize=(10, 10))
+            gpdf.plot(color='blue', markersize=5, alpha=0.5)
+            plt.title(f"Bus Route {route_id} - {route_info.direction.capitalize()} Direction")
+            plt.xlabel("Longitude")
+            plt.ylabel("Latitude")
+            plt.savefig(f"data/ebus_{route_id}_{route_info.direction}.png")
+            plt.close()
+
+
+
             # route_info = taipei_route_info(route_id, direction="come")
             # route_info.parse_route_info()
             # route_info.save_to_database()
