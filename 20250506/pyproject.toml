@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cycu25305"
-version = "0.1.0"
+version = "2025.05.06"
 description = "A short description of the cycu25305 package"
 readme = "README.md"
 requires-python = ">=3.7"
