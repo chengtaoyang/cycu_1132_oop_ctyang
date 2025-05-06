@@ -9,7 +9,7 @@ description = "A short description of the cycu25305 package"
 readme = "README.md"
 requires-python = ">=3.7"
 authors = [
-    { name="Your Name", email="your.email@example.com" }
+    { name="Cheng-Tao Yang", email="ctyang@rosa.systems" }
 ]
 license = { text = "MIT" }
 dependencies = [
