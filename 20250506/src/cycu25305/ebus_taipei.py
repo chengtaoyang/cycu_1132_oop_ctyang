@@ -26,6 +26,12 @@ class taipei_route_list:
             working_directory (str): Directory to store the HTML and database files.
         """
         self.working_directory = working_directory
+
+        #check if the working directory exists , if not create it
+        import os
+        if not os.path.exists(self.working_directory):
+            os.makedirs(self.working_directory)
+
         self.url = 'https://ebus.gov.taipei/ebus?ct=all'
         self.content = None
 
