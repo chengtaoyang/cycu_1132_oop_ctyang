@@ -281,7 +281,8 @@ if __name__ == "__main__":
 
             for index, row in route_info.dataframe.iterrows():
                 print(f"Stop Number: {row['stop_number']}, Stop Name: {row['stop_name']}, "
-                      f"Latitude: {row['latitude']}, Longitude: {row['longitude']}")
+                      f"Latitude: {row['latitude']}, Longitude: {row['longitude']}"
+                      f", Stop ID: {row['stop_id']}")
 
             # route_info = taipei_route_info(route_id, direction="come")
             # route_info.parse_route_info()
