@@ -1,9 +1,4 @@
 
-# homework 1 
-# def get_bus_info_go(bus_id):
-#     #return stop list of this bus_id
-
-#     return []
 
 
 # homework 2
@@ -50,6 +45,8 @@ class BusInfo:
 
 
 if __name__ == "__main__":
+
+
     bus = BusInfo("M25305")
     print(f"Bus ID: {bus.bus_id}")
     print(f"Route Info Go: {bus.get_route_info_go()}")
