@@ -174,3 +174,4 @@ cython_debug/
 *.gpkg-shm 
 *.gpkg-wal
 **/dist
+**/.DS_Store
