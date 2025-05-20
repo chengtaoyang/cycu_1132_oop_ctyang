@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv('20250520/midterm_scores.csv')
 
 # Math scores
-math_scores = df['Math']
+math_scores = df['Chinese']
 
 # Define bins: 0-9, 10-19, ..., 90-100
 bins = [0,10,20,30,40,50,60,70,80,90,100]
